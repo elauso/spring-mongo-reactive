@@ -1,0 +1,18 @@
+# login mongodb on terminal (docker)
+docker exec -it <container-id> mongosh
+
+# login databse on mongo shell
+use customerdb
+db.auth("customerdb","customerdb")
+
+# list collections
+show collections
+
+# list itens in collection
+db.<collection name>.find()
+
+# register customer
+curl -i -X POST -H "Content-Type: application/json" http://localhost:8080/customers -d '{"name":"test","document":"1234567890","email":"test@test.com"}'
+
+# find customer
+curl -i -H "Accept: application/json" http://localhost:8080/customers/64856a3d90a3d63a92cfd8f9
